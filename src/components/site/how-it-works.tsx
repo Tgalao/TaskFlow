@@ -83,28 +83,28 @@ export function HowItWorks() {
   return (
     <section className="mx-auto max-w-5xl px-6 py-24">
       <div className="mx-auto max-w-2xl text-center">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">
+        <h1 className="text-5xl font-bold text-gray-900 dark:text-gray-100">
           Como funciona
         </h1>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+        <p className="mt-5 text-xl text-gray-600 dark:text-gray-400">
           Da conta a primeira tarefa organizada, passo a passo.
         </p>
       </div>
 
-      <div className="mt-16 space-y-10">
+      <div className="mt-20 space-y-8">
         {steps.map((step) => (
           <div
             key={step.title}
-            className="flex flex-col gap-4 rounded-2xl border border-gray-200 bg-white p-6 sm:flex-row sm:items-start sm:gap-6 dark:border-gray-800 dark:bg-gray-900"
+            className="group flex flex-col gap-5 rounded-2xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gray-300 hover:shadow-xl hover:shadow-gray-900/5 sm:flex-row sm:items-start sm:gap-8 dark:border-emerald-900/60 dark:bg-neutral-950 dark:hover:border-emerald-500 dark:hover:shadow-black/40"
           >
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gray-900 text-white dark:bg-white dark:text-gray-900">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gray-900 text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 dark:bg-white dark:text-gray-900 [&_svg]:h-8 [&_svg]:w-8">
               {step.icon}
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+              <h2 className="text-2xl font-semibold text-gray-900 transition-colors group-hover:text-emerald-600 dark:text-gray-100 dark:group-hover:text-emerald-400">
                 {step.title}
               </h2>
-              <p className="mt-2 text-base leading-relaxed text-gray-600 dark:text-gray-400">
+              <p className="mt-3 text-lg leading-relaxed text-gray-600 dark:text-gray-400">
                 {step.description}
               </p>
             </div>
@@ -112,23 +112,23 @@ export function HowItWorks() {
         ))}
       </div>
 
-      <div className="mt-24">
-        <h2 className="text-center text-3xl font-bold text-gray-900 dark:text-gray-100">
+      <div className="mt-28">
+        <h2 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100">
           Tudo o que tens a tua disposicao
         </h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="rounded-xl border border-gray-200 p-5 dark:border-gray-800"
+              className="group rounded-2xl border border-gray-200 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl hover:shadow-gray-900/5 dark:border-emerald-900/60 dark:bg-neutral-950 dark:hover:border-emerald-500 dark:hover:shadow-black/40"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-100 text-gray-900 transition-all duration-300 group-hover:scale-110 group-hover:bg-emerald-100 group-hover:text-emerald-700 dark:bg-gray-800 dark:text-gray-100 dark:group-hover:bg-emerald-950 dark:group-hover:text-emerald-400 [&_svg]:h-6 [&_svg]:w-6">
                 {feature.icon}
               </div>
-              <h3 className="mt-3 font-semibold text-gray-900 dark:text-gray-100">
+              <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-gray-100">
                 {feature.title}
               </h3>
-              <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+              <p className="mt-2 text-base text-gray-600 dark:text-gray-400">
                 {feature.description}
               </p>
             </div>

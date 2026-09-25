@@ -13,8 +13,8 @@ export default async function HomePage() {
     <>
       <SiteHeader />
       <main className="flex-1">
-        <section className="flex flex-col items-center px-6 py-32 text-center">
-          <h1 className="animate-fade-in-up text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-7xl">
+        <section className="flex min-h-[80vh] flex-col items-center justify-center px-6 text-center">
+          <h1 className="animate-fade-in-up text-6xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-8xl">
             TaskFlow
           </h1>
           <p className="animate-fade-in-up mt-6 max-w-2xl text-xl text-gray-600 dark:text-gray-400">

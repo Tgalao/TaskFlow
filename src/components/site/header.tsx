@@ -1,16 +1,13 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { Logo } from "@/components/site/logo";
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b border-gray-200 bg-white/80 backdrop-blur dark:border-gray-900 dark:bg-black">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.png" alt="TaskFlow" width={64} height={64} className="rounded-lg" priority />
-          <span className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-            TaskFlow
-          </span>
+        <Link href="/">
+          <Logo size={64} textClassName="text-3xl" />
         </Link>
 
         <nav className="hidden items-center gap-8 text-base font-medium text-gray-600 dark:text-gray-300 md:flex">

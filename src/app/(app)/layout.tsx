@@ -1,10 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { DashboardNav } from "@/components/dashboard/nav";
 import { SignOutButton } from "@/components/dashboard/sign-out-button";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { Logo } from "@/components/site/logo";
 
 export default async function AppLayout({
   children,
@@ -21,12 +21,8 @@ export default async function AppLayout({
       <header className="border-b border-gray-200 bg-white dark:border-gray-900 dark:bg-black">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-8">
-            <Link
-              href="/dashboard"
-              className="flex items-center gap-2 text-lg font-bold text-gray-900 dark:text-gray-100"
-            >
-              <Image src="/logo.png" alt="TaskFlow" width={28} height={28} className="rounded-md" />
-              TaskFlow
+            <Link href="/dashboard">
+              <Logo size={36} textClassName="text-xl" />
             </Link>
             <DashboardNav />
           </div>
