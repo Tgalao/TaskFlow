@@ -15,8 +15,13 @@ export default async function HomePage() {
       <SiteHeader />
       <main className="flex-1">
         <section className="flex min-h-[80vh] flex-col items-center justify-center px-6 text-center">
-          <h1 className="animate-fade-in-up text-6xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-8xl">
-            TaskFlow
+          <h1 className="animate-fade-in-up lowercase text-6xl font-bold tracking-tight sm:text-8xl">
+            <span className="bg-gradient-to-r from-teal-800 to-gray-950 bg-clip-text text-transparent dark:from-teal-400 dark:to-teal-700">
+              task
+            </span>
+            <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
+              flow
+            </span>
           </h1>
           <p className="animate-fade-in-up mt-6 max-w-2xl text-xl text-gray-600 dark:text-gray-400">
             Organize your tasks: statuses, priorities, deadlines, and a
