@@ -58,7 +58,7 @@ npx prisma migrate dev --name init
 npm run dev
 ```
 
-The app is available at https://task-flow-phi-inky.vercel.app. Create an account at `/register` and start using the dashboard and task list at `/dashboard` and `/tasks`.
+The app is available at http://localhost:3000. Create an account at `/register` and start using the dashboard and task list at `/dashboard` and `/tasks`.
 
 Other useful commands:
 - `npm run build` / `npm run start` - production build and start.
@@ -68,7 +68,3 @@ Other useful commands:
 ## Development process
 
 Idea -> Planning -> Database/Architecture -> Development -> Git/Branches -> Testing -> Deployment -> README -> Screenshots -> Demo
-
-## Author
-
-Tomas Seabra - project for the Programming Technician course (Apprenticeship track, class 3 API).
