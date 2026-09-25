@@ -5,8 +5,15 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { GoogleIcon } from "@/components/auth/google-icon";
+import { GitHubIcon } from "@/components/auth/github-icon";
 
-export function RegisterForm({ googleEnabled }: { googleEnabled: boolean }) {
+export function RegisterForm({
+  googleEnabled,
+  githubEnabled,
+}: {
+  googleEnabled: boolean;
+  githubEnabled: boolean;
+}) {
   const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -51,16 +58,28 @@ export function RegisterForm({ googleEnabled }: { googleEnabled: boolean }) {
 
   return (
     <div className="w-full max-w-sm space-y-4">
-      {googleEnabled && (
+      {(googleEnabled || githubEnabled) && (
         <>
-          <button
-            type="button"
-            onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
-            className="flex w-full items-center justify-center gap-2 rounded-md border border-gray-300 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50"
-          >
-            <GoogleIcon />
-            Continuar com Google
-          </button>
+          {googleEnabled && (
+            <button
+              type="button"
+              onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+              className="flex w-full items-center justify-center gap-2 rounded-md border border-gray-300 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+            >
+              <GoogleIcon />
+              Continuar com Google
+            </button>
+          )}
+          {githubEnabled && (
+            <button
+              type="button"
+              onClick={() => signIn("github", { callbackUrl: "/dashboard" })}
+              className="flex w-full items-center justify-center gap-2 rounded-md border border-gray-300 px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+            >
+              <GitHubIcon />
+              Continuar com GitHub
+            </button>
+          )}
           <div className="flex items-center gap-3">
             <div className="h-px flex-1 bg-gray-200" />
             <span className="text-xs text-gray-400">ou</span>
