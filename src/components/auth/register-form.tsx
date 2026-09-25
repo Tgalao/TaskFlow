@@ -62,7 +62,7 @@ export function RegisterForm({
   }
 
   return (
-    <div className="w-full max-w-xl space-y-5 rounded-2xl border border-gray-200 bg-white/80 p-10 shadow-xl shadow-gray-900/5 backdrop-blur dark:border-gray-800 dark:bg-gray-900/80 dark:shadow-none">
+    <div className="w-full max-w-xl space-y-5 rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-xl shadow-gray-900/5 backdrop-blur sm:p-10 dark:border-gray-800 dark:bg-gray-900/80 dark:shadow-none">
       {(googleEnabled || githubEnabled) && (
         <>
           <div className="space-y-2">

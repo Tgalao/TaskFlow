@@ -20,24 +20,35 @@ export default async function AppLayout({
   return (
     <div className="flex min-h-screen flex-1 flex-col">
       <header className="border-b border-gray-200 bg-white dark:border-gray-900 dark:bg-black">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <div className="flex items-center gap-10">
-            <Link href="/dashboard">
-              <Logo size={60} textClassName="text-4xl" />
-            </Link>
-            <DashboardNav />
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="flex items-center justify-between py-4 sm:py-5">
+            <div className="flex items-center gap-10">
+              <Link href="/dashboard">
+                <Logo
+                  size={60}
+                  textClassName="text-xl sm:text-4xl"
+                  imgClassName="w-9 h-9 sm:w-16 sm:h-16"
+                />
+              </Link>
+              <div className="hidden sm:block">
+                <DashboardNav />
+              </div>
+            </div>
+            <div className="flex items-center gap-2 sm:gap-4">
+              <ThemeToggle />
+              <SettingsLink />
+              <span className="hidden text-base text-gray-600 dark:text-gray-400 md:inline">
+                {session.user.name ?? session.user.email}
+              </span>
+              <SignOutButton />
+            </div>
           </div>
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
-            <SettingsLink />
-            <span className="text-base text-gray-600 dark:text-gray-400">
-              {session.user.name ?? session.user.email}
-            </span>
-            <SignOutButton />
+          <div className="pb-3 sm:hidden">
+            <DashboardNav />
           </div>
         </div>
       </header>
-      <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-10">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6 sm:py-10">
         {children}
       </main>
     </div>

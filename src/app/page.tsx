@@ -14,8 +14,8 @@ export default async function HomePage() {
     <>
       <SiteHeader />
       <main className="flex-1">
-        <section className="flex min-h-[80vh] flex-col items-center justify-center px-6 text-center">
-          <h1 className="animate-fade-in-up lowercase text-6xl font-bold tracking-tight sm:text-8xl">
+        <section className="flex min-h-[80vh] flex-col items-center justify-center px-4 text-center sm:px-6">
+          <h1 className="animate-fade-in-up lowercase text-5xl font-bold tracking-tight sm:text-7xl md:text-8xl">
             <span className="bg-gradient-to-r from-teal-800 to-gray-950 bg-clip-text text-transparent dark:from-teal-400 dark:to-teal-700">
               task
             </span>
@@ -23,11 +23,11 @@ export default async function HomePage() {
               flow
             </span>
           </h1>
-          <p className="animate-fade-in-up mt-6 max-w-2xl text-xl text-gray-600 dark:text-gray-400">
+          <p className="animate-fade-in-up mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-400 sm:text-xl">
             Organize your tasks: statuses, priorities, deadlines, and a
             dashboard with real-time statistics.
           </p>
-          <div className="mt-10 flex gap-4">
+          <div className="mt-10 flex w-full max-w-xs flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4">
             <Link
               href="/register"
               className="rounded-md bg-gray-900 px-7 py-3.5 text-lg font-semibold text-white transition hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
