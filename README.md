@@ -1,75 +1,74 @@
 # TaskFlow
 
-Plataforma de gestão de tarefas (tipo mini-Trello/Jira), construída como projeto de portefólio para demonstrar CRUD completo, autenticação, backend e integração com base de dados.
+Task management platform (mini-Trello/Jira style), built as a portfolio project to demonstrate full CRUD, authentication, backend and database integration.
 
 ## Stack
 
 - **Frontend/Backend:** Next.js (App Router) + TypeScript
 - **API:** Next.js Route Handlers
-- **Base de dados:** PostgreSQL via Prisma ORM
-- **Autenticação:** NextAuth.js / Auth.js (email+password e OAuth)
+- **Database:** PostgreSQL via Prisma ORM
+- **Authentication:** NextAuth.js / Auth.js (email+password and OAuth)
 
-## Funcionalidades
+## Features
 
-- Criar conta / login
-- Criar, editar, apagar tarefas
-- Estados: To Do / In Progress / Done
-- Prioridades: Low / Medium / High
+- Sign up / login
+- Create, edit, delete tasks
+- Statuses: To Do / In Progress / Done
+- Priorities: Low / Medium / High
 - Deadlines
-- Pesquisa
-- Filtros
-- Dashboard com estatisticas
+- Search
+- Filters
+- Dashboard with statistics
 
-## Estado do projeto
+## Project status
 
-Em desenvolvimento - fase atual: MVP funcional (auth + CRUD de tarefas + dashboard).
+In development - current phase: functional MVP (auth + task CRUD + dashboard).
 
-Implementado:
-- Registo e login (email + password, via NextAuth/Auth.js). OAuth (Google/GitHub) fica ativo automaticamente se as credenciais forem definidas no `.env`.
-- CRUD de tarefas (criar, editar, apagar, mudar estado) com API Route Handlers.
-- Pesquisa e filtros (estado, prioridade) na lista de tarefas.
-- Dashboard com estatisticas (total, por estado, tarefas atrasadas).
-- Rotas protegidas via proxy (`src/proxy.ts`).
+Implemented:
+- Registration and login (email + password, via NextAuth/Auth.js). OAuth (Google/GitHub) is automatically enabled if credentials are set in `.env`.
+- Task CRUD (create, edit, delete, change status) via API Route Handlers.
+- Search and filters (status, priority) on the task list.
+- Dashboard with statistics (total, by status, overdue tasks).
+- Protected routes via proxy (`src/proxy.ts`).
 
-Por fazer:
-- Testes automatizados.
+To do:
+- Automated tests.
 - Deployment.
 - Screenshots / demo.
 
-Ver docs/ARCHITECTURE.md para o schema da base de dados e a estrutura de pastas.
+See docs/ARCHITECTURE.md for the database schema and folder structure.
 
-## Como correr o projeto localmente
+## Running locally
 
-Pre-requisitos: Node.js 20+ e uma base de dados PostgreSQL (local, Docker, ou um servico gratuito como Neon/Supabase).
+Prerequisites: Node.js 20+ and a PostgreSQL database (local, Docker, or a free service like Neon/Supabase).
 
 ```bash
-# 1. Instalar dependencias
+# 1. Install dependencies
 npm install
 
-# 2. Configurar variaveis de ambiente
+# 2. Set environment variables
 cp .env.example .env
-# edita o .env com a tua DATABASE_URL e gera um AUTH_SECRET com:
+# edit .env with your DATABASE_URL and generate an AUTH_SECRET with:
 npx auth secret
 
-# 3. Criar as tabelas na base de dados
+# 3. Create database tables
 npx prisma migrate dev --name init
 
-# 4. Arrancar o servidor de desenvolvimento
+# 4. Start the dev server
 npm run dev
 ```
 
-A aplicacao fica disponivel em http://localhost:3000. Cria uma conta em `/register` e comeca a usar o dashboard e a lista de tarefas em `/dashboard` e `/tasks`.
+The app is available at http://localhost:3000. Create an account at `/register` and start using the dashboard and task list at `/dashboard` and `/tasks`.
 
-Outros comandos uteis:
-- `npm run build` / `npm run start` - build e arranque em modo producao.
-- `npm run lint` - corre o ESLint.
-- `npm run db:studio` - abre o Prisma Studio para inspecionar os dados.
+Other useful commands:
+- `npm run build` / `npm run start` - production build and start.
+- `npm run lint` - runs ESLint.
+- `npm run db:studio` - opens Prisma Studio to inspect the data.
 
-## Processo de desenvolvimento
+## Development process
 
-Ideia -> Planeamento -> Database/Architecture -> Development -> Git/Branches -> Testing -> Deployment -> README -> Screenshots -> Demo
+Idea -> Planning -> Database/Architecture -> Development -> Git/Branches -> Testing -> Deployment -> README -> Screenshots -> Demo
 
-## Autor
+## Author
 
-Tomas Seabra - projeto do curso Tecnico/a Programador/a de Informatica (modalidade de Aprendizagem, turma 3 API).
-
+Tomas Seabra - project for the Programming Technician course (Apprenticeship track, class 3 API).
