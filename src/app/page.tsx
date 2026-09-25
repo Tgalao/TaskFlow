@@ -30,13 +30,13 @@ export default async function HomePage() {
           <div className="mt-10 flex w-full max-w-xs flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4">
             <Link
               href="/register"
-              className="rounded-md bg-gray-900 px-7 py-3.5 text-lg font-semibold text-white transition hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+              className="rounded-md border border-transparent bg-gray-900 px-7 py-3.5 text-lg font-semibold text-white transition-all duration-200 hover:scale-110 hover:border-green-400 hover:shadow-md dark:bg-white dark:text-gray-900"
             >
               Sign up
             </Link>
             <Link
               href="/login"
-              className="rounded-md border border-gray-300 px-7 py-3.5 text-lg font-semibold text-gray-900 transition hover:bg-gray-100 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800"
+              className="rounded-md border border-gray-300 px-7 py-3.5 text-lg font-semibold text-gray-900 transition-all duration-200 hover:scale-110 hover:border-green-500 hover:text-green-600 hover:shadow-md dark:border-gray-700 dark:text-gray-100 dark:hover:border-green-400 dark:hover:text-green-400"
             >
               Sign in
             </Link>
