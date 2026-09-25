@@ -19,13 +19,9 @@ export function Logo({
         priority
         className={`shrink-0 ${imgClassName}`}
       />
-      <span className={`font-bold tracking-tight lowercase ${textClassName}`}>
-        <span className="bg-gradient-to-r from-teal-800 to-gray-950 bg-clip-text text-transparent dark:from-teal-400 dark:to-teal-700">
-          task
-        </span>
-        <span className="bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">
-          flow
-        </span>
+      <span className={`font-extrabold tracking-tight lowercase ${textClassName}`}>
+        <span className="text-[#07585c] dark:text-[#3ddc9a]">task</span>
+        <span className="text-[#00c96b]">flow</span>
       </span>
     </span>
   );
