@@ -16,13 +16,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "TaskFlow",
-  description: "Plataforma de gestao de tarefas - CRUD, autenticacao e dashboard.",
+  description: "Task management platform - full CRUD, authentication and dashboard.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="pt"
+      lang="en"
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >

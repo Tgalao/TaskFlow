@@ -11,14 +11,14 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-8 text-base font-medium text-gray-600 dark:text-gray-300 md:flex">
-          <Link href="/como-funciona" className="hover:text-gray-900 dark:hover:text-white">
-            Como funciona
+          <Link href="/how-it-works" className="hover:text-gray-900 dark:hover:text-white">
+            How it works
           </Link>
           <Link href="/faq" className="hover:text-gray-900 dark:hover:text-white">
             FAQ
           </Link>
-          <Link href="/suporte" className="hover:text-gray-900 dark:hover:text-white">
-            Suporte
+          <Link href="/support" className="hover:text-gray-900 dark:hover:text-white">
+            Support
           </Link>
         </nav>
 
@@ -28,13 +28,13 @@ export function SiteHeader() {
             href="/login"
             className="hidden text-base font-semibold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white sm:block"
           >
-            Entrar
+            Sign in
           </Link>
           <Link
             href="/register"
             className="rounded-md bg-gray-900 px-5 py-2.5 text-base font-semibold text-white transition hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
           >
-            Criar conta
+            Sign up
           </Link>
         </div>
       </div>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { SiteHeader } from "@/components/site/header";
+import { SiteFooter } from "@/components/site/footer";
 
 export default async function HomePage() {
   const session = await auth();
@@ -18,25 +19,26 @@ export default async function HomePage() {
             TaskFlow
           </h1>
           <p className="animate-fade-in-up mt-6 max-w-2xl text-xl text-gray-600 dark:text-gray-400">
-            Organiza as tuas tarefas: estados, prioridades, deadlines e um
-            dashboard com estatisticas em tempo real.
+            Organize your tasks: statuses, priorities, deadlines, and a
+            dashboard with real-time statistics.
           </p>
           <div className="mt-10 flex gap-4">
             <Link
               href="/register"
               className="rounded-md bg-gray-900 px-7 py-3.5 text-lg font-semibold text-white transition hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
             >
-              Criar conta
+              Sign up
             </Link>
             <Link
               href="/login"
               className="rounded-md border border-gray-300 px-7 py-3.5 text-lg font-semibold text-gray-900 transition hover:bg-gray-100 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800"
             >
-              Entrar
+              Sign in
             </Link>
           </div>
         </section>
       </main>
+      <SiteFooter />
     </>
   );
 }

@@ -1,28 +1,28 @@
 const faqs = [
   {
-    question: "A TaskFlow e gratuita?",
+    question: "Is TaskFlow free?",
     answer:
-      "Sim. A TaskFlow e um projeto de portefolio e pode ser usada livremente para organizares as tuas tarefas.",
+      "Yes. TaskFlow is a portfolio project and can be used freely to organize your tasks.",
   },
   {
-    question: "Preciso de cartao de credito para criar conta?",
+    question: "Do I need a credit card to sign up?",
     answer:
-      "Nao. Basta um email e password, ou entrares com a tua conta Google ou GitHub.",
+      "No. Just an email and password, or sign in with your Google or GitHub account.",
   },
   {
-    question: "Consigo aceder de telemovel?",
+    question: "Can I use it on my phone?",
     answer:
-      "Sim, o site e totalmente responsivo e funciona bem em telemovel, tablet e computador.",
+      "Yes, the site is fully responsive and works well on phone, tablet and desktop.",
   },
   {
-    question: "Os meus dados sao privados?",
+    question: "Is my data private?",
     answer:
-      "Sim. Cada conta so ve e gere as suas proprias tarefas — nunca as de outros utilizadores.",
+      "Yes. Each account only sees and manages its own tasks — never other users'.",
   },
   {
-    question: "Posso mudar o estado ou prioridade de uma tarefa depois de criada?",
+    question: "Can I change a task's status or priority after creating it?",
     answer:
-      "Sim, a qualquer momento. Podes editar titulo, descricao, estado, prioridade e prazo de cada tarefa.",
+      "Yes, at any time. You can edit the title, description, status, priority and due date of every task.",
   },
 ];
 
@@ -30,10 +30,10 @@ export function Faq() {
   return (
     <section className="mx-auto max-w-3xl px-6 py-20">
       <h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100">
-        Perguntas frequentes
+        Frequently asked questions
       </h1>
       <p className="mt-4 text-center text-lg text-gray-600 dark:text-gray-400">
-        Passa o rato por cima de uma pergunta para veres a resposta.
+        Hover over a question to see the answer.
       </p>
       <div className="mt-12 divide-y divide-gray-200 rounded-xl border border-gray-200 bg-white dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-900">
         {faqs.map((faq) => (

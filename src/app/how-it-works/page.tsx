@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site/header";
-import { Support } from "@/components/site/support";
+import { HowItWorks } from "@/components/site/how-it-works";
 
 export const metadata: Metadata = {
-  title: "Suporte - TaskFlow",
+  title: "How it works - TaskFlow",
 };
 
-export default function SuportePage() {
+export default function HowItWorksPage() {
   return (
     <>
       <SiteHeader />
-      <main className="flex flex-1 flex-col">
-        <Support />
+      <main className="flex-1">
+        <HowItWorks />
       </main>
     </>
   );

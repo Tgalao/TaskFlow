@@ -4,7 +4,7 @@ export const taskStatusValues = ["TODO", "IN_PROGRESS", "DONE"] as const;
 export const priorityValues = ["LOW", "MEDIUM", "HIGH"] as const;
 
 export const createTaskSchema = z.object({
-  title: z.string().min(1, "Titulo e obrigatorio").max(200),
+  title: z.string().min(1, "Title is required").max(200),
   description: z.string().max(2000).optional().nullable(),
   status: z.enum(taskStatusValues).default("TODO"),
   priority: z.enum(priorityValues).default("MEDIUM"),

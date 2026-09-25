@@ -6,6 +6,13 @@ import { useRouter } from "next/navigation";
 import type { Task } from "@/types";
 import type { TaskStatus } from "@prisma/client";
 import { StatusBadge, PriorityBadge } from "@/components/tasks/badges";
+import { Select } from "@/components/ui/select";
+
+const statusOptions = [
+  { value: "TODO", label: "To Do" },
+  { value: "IN_PROGRESS", label: "In Progress" },
+  { value: "DONE", label: "Done" },
+];
 
 export function TaskList({ initialTasks }: { initialTasks: Task[] }) {
   const router = useRouter();
@@ -28,7 +35,7 @@ export function TaskList({ initialTasks }: { initialTasks: Task[] }) {
   }
 
   async function deleteTask(id: string) {
-    if (!confirm("Apagar esta tarefa?")) return;
+    if (!confirm("Delete this task?")) return;
     setPendingId(id);
     const res = await fetch(`/api/tasks/${id}`, { method: "DELETE" });
     if (res.ok) {
@@ -41,7 +48,7 @@ export function TaskList({ initialTasks }: { initialTasks: Task[] }) {
   if (tasks.length === 0) {
     return (
       <p className="rounded-lg border border-dashed border-gray-300 p-8 text-center text-sm text-gray-500 dark:border-gray-700 dark:text-gray-400">
-        Nenhuma tarefa encontrada.
+        No tasks found.
       </p>
     );
   }
@@ -65,28 +72,24 @@ export function TaskList({ initialTasks }: { initialTasks: Task[] }) {
               <PriorityBadge priority={task.priority} />
               {task.dueDate && (
                 <span className="text-xs text-gray-500 dark:text-gray-400">
-                  Prazo: {new Date(task.dueDate).toLocaleDateString("pt-PT")}
+                  Due: {new Date(task.dueDate).toLocaleDateString("en-GB")}
                 </span>
               )}
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <select
+            <Select
               value={task.status}
-              disabled={pendingId === task.id}
-              onChange={(e) => updateStatus(task.id, e.target.value as TaskStatus)}
-              className="rounded-md border border-gray-300 px-2 py-1 text-xs dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
-            >
-              <option value="TODO">To Do</option>
-              <option value="IN_PROGRESS">In Progress</option>
-              <option value="DONE">Done</option>
-            </select>
+              onChange={(v) => updateStatus(task.id, v as TaskStatus)}
+              options={statusOptions}
+              placeholder="Status"
+            />
             <button
               onClick={() => deleteTask(task.id)}
               disabled={pendingId === task.id}
-              className="rounded-md border border-red-200 px-2 py-1 text-xs font-medium text-red-600 hover:bg-red-50 dark:border-red-900 dark:hover:bg-red-950/50"
+              className="rounded-md border border-red-200 px-3 py-2.5 text-sm font-medium text-red-600 hover:bg-red-50 dark:border-red-900 dark:hover:bg-red-950/50"
             >
-              Apagar
+              Delete
             </button>
           </div>
         </li>

@@ -1,7 +1,7 @@
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { FilterBar } from "@/components/tasks/filter-bar";
-import { NewTaskPanel } from "@/components/tasks/new-task-panel";
+import { NewTaskSection } from "@/components/tasks/new-task-panel";
 import { TaskList } from "@/components/tasks/task-list";
 import type { Priority, Prisma, TaskStatus } from "@prisma/client";
 
@@ -41,10 +41,7 @@ export default async function TasksPage({
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Tarefas</h1>
-        <NewTaskPanel />
-      </div>
+      <NewTaskSection />
       <FilterBar />
       <TaskList initialTasks={tasks} />
     </div>

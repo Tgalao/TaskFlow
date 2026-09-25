@@ -9,7 +9,7 @@ export async function POST(request: Request) {
 
   if (!parsed.success) {
     return NextResponse.json(
-      { error: parsed.error.issues[0]?.message ?? "Dados invalidos" },
+      { error: parsed.error.issues[0]?.message ?? "Invalid data" },
       { status: 400 }
     );
   }
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
   const existing = await prisma.user.findUnique({ where: { email } });
   if (existing) {
     return NextResponse.json(
-      { error: "Ja existe uma conta com este email" },
+      { error: "An account with this email already exists" },
       { status: 409 }
     );
   }

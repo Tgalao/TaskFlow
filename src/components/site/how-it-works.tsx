@@ -10,72 +10,72 @@ import {
 const steps = [
   {
     icon: <UserPlusIcon />,
-    title: "1. Cria a tua conta",
+    title: "1. Create your account",
     description:
-      "Regista-te com nome, email e password em menos de um minuto — a password fica sempre encriptada. Preferes ainda mais rapido? Entra diretamente com a tua conta Google ou GitHub, sem preencher formularios. Nao precisas de cartao de credito nem de confirmar nada por email para comecares a usar a app.",
+      "Sign up with name, email and password in under a minute — your password is always encrypted. Want it even faster? Sign in directly with your Google or GitHub account, no forms to fill in. No credit card and no email confirmation needed to start using the app.",
   },
   {
     icon: <ListChecksIcon />,
-    title: "2. Cria as tuas tarefas",
+    title: "2. Create your tasks",
     description:
-      "Para cada tarefa defines um titulo, uma descricao opcional com mais detalhe, uma prioridade (Low, Medium ou High) e, se quiseres, um prazo. Tudo fica guardado na tua conta e so tu consegues ver ou editar as tuas proprias tarefas — nunca as de outra pessoa.",
+      "For each task you set a title, an optional description with more detail, a priority (Low, Medium or High) and, if you want, a due date. Everything is stored in your account and only you can see or edit your own tasks — never anyone else's.",
   },
   {
     icon: <RefreshIcon />,
-    title: "3. Move as tarefas entre estados",
+    title: "3. Move tasks between statuses",
     description:
-      "Cada tarefa passa por tres estados: To Do (por fazer), In Progress (em curso) e Done (concluida). Basta escolher o novo estado numa lista pendente junto a tarefa — a mudanca fica gravada de imediato, sem teres de recarregar a pagina, e quando marcas uma tarefa como concluida a data de conclusao fica registada automaticamente.",
+      "Every task goes through three statuses: To Do, In Progress and Done. Just pick the new status from a dropdown next to the task — the change is saved instantly, no page reload needed, and when you mark a task as done the completion date is recorded automatically.",
   },
   {
     icon: <SearchIcon />,
-    title: "4. Encontra tudo em segundos",
+    title: "4. Find anything in seconds",
     description:
-      "Com dezenas de tarefas, procurar uma a olho torna-se impossivel. Por isso tens uma caixa de pesquisa que procura no titulo e na descricao, e filtros independentes por estado e por prioridade — podes combinar os tres ao mesmo tempo para chegares exatamente ao que precisas.",
+      "With dozens of tasks, finding one by eye becomes impossible. That's why you have a search box that looks through the title and description, plus independent filters by status and priority — combine all three at once to get exactly what you need.",
   },
   {
     icon: <ChartIcon />,
-    title: "5. Acompanha tudo no dashboard",
+    title: "5. Track everything on the dashboard",
     description:
-      "Assim que entras, o dashboard mostra-te de imediato: quantas tarefas tens no total, quantas estao em cada estado (To Do / In Progress / Done) e quantas estao atrasadas (prazo ja passou e ainda nao estao concluidas). E tambem lista as tuas 5 tarefas mais recentes, para retomares o trabalho sem teres de ir a lista completa.",
+      "As soon as you sign in, the dashboard shows you at a glance: how many tasks you have in total, how many are in each status (To Do / In Progress / Done), and how many are overdue (due date passed and not yet done). It also lists your 5 most recent tasks, so you can pick up where you left off without going to the full list.",
   },
   {
     icon: <ShieldIcon />,
-    title: "6. Controlas sempre a tua conta",
+    title: "6. You're always in control of your account",
     description:
-      "Em Definicoes podes ver os dados da tua conta e, se um dia quiseres, apagar a conta por completo — a acao pede confirmacao explicita e remove permanentemente a tua conta e todas as tuas tarefas. Tambem podes alternar entre modo claro e escuro a qualquer momento; a preferencia fica guardada no teu browser.",
+      "In Settings you can see your account details and, if you ever want to, delete your account entirely — the action requires explicit confirmation and permanently removes your account and all your tasks. You can also switch between light and dark mode at any time; the preference is saved in your browser.",
   },
 ];
 
 const features = [
   {
     icon: <UserPlusIcon />,
-    title: "Autenticacao flexivel",
-    description: "Email+password, Google ou GitHub — escolhes tu.",
+    title: "Flexible authentication",
+    description: "Email+password, Google or GitHub — you choose.",
   },
   {
     icon: <ListChecksIcon />,
-    title: "CRUD completo",
-    description: "Cria, edita e apaga tarefas sem limites.",
+    title: "Full CRUD",
+    description: "Create, edit and delete tasks without limits.",
   },
   {
     icon: <ChartIcon />,
-    title: "Dashboard em tempo real",
-    description: "Estatisticas atualizadas a cada visita.",
+    title: "Real-time dashboard",
+    description: "Statistics updated on every visit.",
   },
   {
     icon: <SearchIcon />,
-    title: "Pesquisa e filtros",
-    description: "Por texto, estado e prioridade, combinaveis.",
+    title: "Search and filters",
+    description: "By text, status and priority, combinable.",
   },
   {
     icon: <RefreshIcon />,
-    title: "Fluxo de estados simples",
-    description: "To Do, In Progress e Done, com um clique.",
+    title: "Simple status flow",
+    description: "To Do, In Progress and Done, with one click.",
   },
   {
     icon: <ShieldIcon />,
-    title: "Privacidade e controlo",
-    description: "Os teus dados sao so teus, e podes apaga-los quando quiseres.",
+    title: "Privacy and control",
+    description: "Your data is yours alone, and you can delete it whenever you want.",
   },
 ];
 
@@ -84,10 +84,10 @@ export function HowItWorks() {
     <section className="mx-auto max-w-5xl px-6 py-24">
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-5xl font-bold text-gray-900 dark:text-gray-100">
-          Como funciona
+          How it works
         </h1>
         <p className="mt-5 text-xl text-gray-600 dark:text-gray-400">
-          Da conta a primeira tarefa organizada, passo a passo.
+          From account to first organized task, step by step.
         </p>
       </div>
 
@@ -114,7 +114,7 @@ export function HowItWorks() {
 
       <div className="mt-28">
         <h2 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100">
-          Tudo o que tens a tua disposicao
+          Everything at your disposal
         </h2>
         <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (

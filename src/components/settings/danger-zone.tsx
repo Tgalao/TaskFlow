@@ -19,7 +19,7 @@ export function DangerZone({ email }: { email: string }) {
     const res = await fetch("/api/account", { method: "DELETE" });
 
     if (!res.ok) {
-      setError("Nao foi possivel apagar a conta. Tenta novamente.");
+      setError("Could not delete your account. Please try again.");
       setLoading(false);
       return;
     }
@@ -38,11 +38,11 @@ export function DangerZone({ email }: { email: string }) {
       <div className="flex flex-wrap items-center justify-between gap-4 px-5 py-4">
         <div>
           <p className="font-medium text-gray-900 dark:text-gray-100">
-            Apagar esta conta
+            Delete this account
           </p>
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Elimina permanentemente a tua conta e todas as tuas tarefas. Esta
-            acao nao pode ser desfeita.
+            Permanently deletes your account and all your tasks. This action
+            cannot be undone.
           </p>
         </div>
         <button
@@ -50,15 +50,15 @@ export function DangerZone({ email }: { email: string }) {
           onClick={() => setOpen(true)}
           className="shrink-0 rounded-md border border-red-600 px-4 py-2 text-sm font-semibold text-red-600 transition hover:bg-red-600 hover:text-white"
         >
-          Apagar conta
+          Delete account
         </button>
       </div>
 
       {open && (
         <div className="animate-fade-in-up space-y-3 border-t border-red-200 px-5 py-4 dark:border-red-900">
           <p className="text-sm text-gray-700 dark:text-gray-300">
-            Esta acao e irreversivel. Para confirmar, escreve o teu email (
-            <span className="font-semibold">{email}</span>) na caixa abaixo.
+            This action is irreversible. To confirm, type your email (
+            <span className="font-semibold">{email}</span>) in the box below.
           </p>
           <input
             value={confirmation}
@@ -78,7 +78,7 @@ export function DangerZone({ email }: { email: string }) {
               disabled={!canDelete || loading}
               className="rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-700 disabled:cursor-not-allowed disabled:opacity-40"
             >
-              {loading ? "A apagar..." : "Confirmar eliminacao definitiva"}
+              {loading ? "Deleting..." : "Permanently delete"}
             </button>
             <button
               type="button"
@@ -89,7 +89,7 @@ export function DangerZone({ email }: { email: string }) {
               }}
               className="rounded-md px-4 py-2 text-sm font-semibold text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
             >
-              Cancelar
+              Cancel
             </button>
           </div>
         </div>

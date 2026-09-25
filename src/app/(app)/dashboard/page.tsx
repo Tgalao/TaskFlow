@@ -30,23 +30,23 @@ export default async function DashboardPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Dashboard</h1>
-        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-          Resumo das tuas tarefas.
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">Dashboard</h1>
+        <p className="mt-2 text-lg text-gray-500 dark:text-gray-400">
+          Summary of your tasks.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-5">
+      <div className="grid grid-cols-2 gap-5 sm:grid-cols-5">
         <StatCard label="Total" value={total} />
         <StatCard label="To Do" value={todo} />
         <StatCard label="In Progress" value={inProgress} />
         <StatCard label="Done" value={done} />
-        <StatCard label="Atrasadas" value={overdue} />
+        <StatCard label="Overdue" value={overdue} />
       </div>
 
       <div>
-        <h2 className="mb-3 text-lg font-semibold text-gray-900 dark:text-gray-100">
-          Tarefas recentes
+        <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-gray-100">
+          Recent tasks
         </h2>
         <TaskList initialTasks={recentTasks} />
       </div>

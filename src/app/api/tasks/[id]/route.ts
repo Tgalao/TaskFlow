@@ -8,14 +8,14 @@ type RouteParams = { params: Promise<{ id: string }> };
 export async function GET(_request: Request, { params }: RouteParams) {
   const session = await auth();
   if (!session?.user?.id) {
-    return NextResponse.json({ error: "Nao autenticado" }, { status: 401 });
+    return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   }
 
   const { id } = await params;
   const task = await prisma.task.findUnique({ where: { id } });
 
   if (!task || task.userId !== session.user.id) {
-    return NextResponse.json({ error: "Tarefa nao encontrada" }, { status: 404 });
+    return NextResponse.json({ error: "Task not found" }, { status: 404 });
   }
 
   return NextResponse.json({ task });
@@ -24,14 +24,14 @@ export async function GET(_request: Request, { params }: RouteParams) {
 export async function PATCH(request: Request, { params }: RouteParams) {
   const session = await auth();
   if (!session?.user?.id) {
-    return NextResponse.json({ error: "Nao autenticado" }, { status: 401 });
+    return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   }
 
   const { id } = await params;
   const existing = await prisma.task.findUnique({ where: { id } });
 
   if (!existing || existing.userId !== session.user.id) {
-    return NextResponse.json({ error: "Tarefa nao encontrada" }, { status: 404 });
+    return NextResponse.json({ error: "Task not found" }, { status: 404 });
   }
 
   const body = await request.json();
@@ -39,7 +39,7 @@ export async function PATCH(request: Request, { params }: RouteParams) {
 
   if (!parsed.success) {
     return NextResponse.json(
-      { error: parsed.error.issues[0]?.message ?? "Dados invalidos" },
+      { error: parsed.error.issues[0]?.message ?? "Invalid data" },
       { status: 400 }
     );
   }
@@ -75,14 +75,14 @@ export async function PATCH(request: Request, { params }: RouteParams) {
 export async function DELETE(_request: Request, { params }: RouteParams) {
   const session = await auth();
   if (!session?.user?.id) {
-    return NextResponse.json({ error: "Nao autenticado" }, { status: 401 });
+    return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   }
 
   const { id } = await params;
   const existing = await prisma.task.findUnique({ where: { id } });
 
   if (!existing || existing.userId !== session.user.id) {
-    return NextResponse.json({ error: "Tarefa nao encontrada" }, { status: 404 });
+    return NextResponse.json({ error: "Task not found" }, { status: 404 });
   }
 
   await prisma.task.delete({ where: { id } });

@@ -23,9 +23,9 @@ export default async function TaskDetailPage({
     <div className="space-y-6">
       <div>
         <Link href="/tasks" className="text-sm text-gray-500 hover:underline dark:text-gray-400">
-          &larr; Voltar as tarefas
+          &larr; Back to tasks
         </Link>
-        <h1 className="mt-2 text-2xl font-bold text-gray-900 dark:text-gray-100">Editar tarefa</h1>
+        <h1 className="mt-2 text-2xl font-bold text-gray-900 dark:text-gray-100">Edit task</h1>
       </div>
       <div className="max-w-xl rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
         <TaskForm task={task} />

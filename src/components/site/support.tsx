@@ -7,17 +7,17 @@ export function Support() {
     <section className="flex-1 bg-gray-100 dark:bg-black">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100">
-          Suporte
+          Support
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-center text-lg text-gray-600 dark:text-gray-400">
-          Tens alguma duvida, sugestao ou encontraste um problema? Escreve-nos
-          diretamente ou usa o formulario abaixo.
+          Have a question, a suggestion, or found a problem? Write to us
+          directly or use the form below.
         </p>
 
         <div className="mt-14 grid gap-10 md:grid-cols-2">
           <div>
             <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-              Contacto direto
+              Direct contact
             </h2>
             <a
               href={`mailto:${SUPPORT_EMAIL}`}
