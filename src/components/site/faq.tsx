@@ -34,11 +34,14 @@ export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="mx-auto max-w-3xl px-6 py-20">
-      <h2 className="text-center text-3xl font-bold text-gray-900 dark:text-gray-100">
+    <section className="mx-auto max-w-3xl px-6 py-20">
+      <h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100">
         Perguntas frequentes
-      </h2>
-      <div className="mt-10 divide-y divide-gray-200 rounded-xl border border-gray-200 bg-white dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-900">
+      </h1>
+      <p className="mt-4 text-center text-lg text-gray-600 dark:text-gray-400">
+        Tudo o que precisas de saber sobre a TaskFlow.
+      </p>
+      <div className="mt-12 divide-y divide-gray-200 rounded-xl border border-gray-200 bg-white dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-900">
         {faqs.map((faq, i) => {
           const isOpen = openIndex === i;
           return (
@@ -46,11 +49,11 @@ export function Faq() {
               <button
                 type="button"
                 onClick={() => setOpenIndex(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-gray-900 dark:text-gray-100"
+                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-lg font-semibold text-gray-900 dark:text-gray-100"
               >
                 {faq.question}
                 <span
-                  className={`shrink-0 text-gray-400 transition-transform ${
+                  className={`shrink-0 text-2xl text-gray-400 transition-transform ${
                     isOpen ? "rotate-45" : ""
                   }`}
                 >
@@ -58,7 +61,7 @@ export function Faq() {
                 </span>
               </button>
               {isOpen && (
-                <p className="animate-fade-in-up px-5 pb-4 text-sm text-gray-600 dark:text-gray-400">
+                <p className="animate-fade-in-up px-6 pb-5 text-base text-gray-600 dark:text-gray-400">
                   {faq.answer}
                 </p>
               )}

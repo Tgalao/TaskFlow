@@ -1,10 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { SiteHeader } from "@/components/site/header";
 import { HowItWorks } from "@/components/site/how-it-works";
-import { Faq } from "@/components/site/faq";
-import { Support } from "@/components/site/support";
 
 export default async function HomePage() {
   const session = await auth();
@@ -16,24 +15,32 @@ export default async function HomePage() {
     <>
       <SiteHeader />
       <main className="flex-1">
-        <section className="flex flex-col items-center px-6 py-24 text-center">
-          <h1 className="animate-fade-in-up text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl">
+        <section className="flex flex-col items-center px-6 py-28 text-center">
+          <Image
+            src="/logo.png"
+            alt="TaskFlow"
+            width={120}
+            height={120}
+            className="animate-fade-in-up rounded-2xl"
+            priority
+          />
+          <h1 className="animate-fade-in-up mt-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-7xl">
             TaskFlow
           </h1>
-          <p className="animate-fade-in-up mt-4 max-w-xl text-lg text-gray-600 dark:text-gray-400">
+          <p className="animate-fade-in-up mt-6 max-w-2xl text-xl text-gray-600 dark:text-gray-400">
             Organiza as tuas tarefas: estados, prioridades, deadlines e um
             dashboard com estatisticas em tempo real.
           </p>
-          <div className="mt-8 flex gap-4">
+          <div className="mt-10 flex gap-4">
             <Link
               href="/register"
-              className="rounded-md bg-gray-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+              className="rounded-md bg-gray-900 px-7 py-3.5 text-lg font-semibold text-white transition hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
             >
               Criar conta
             </Link>
             <Link
               href="/login"
-              className="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-900 transition hover:bg-gray-100 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800"
+              className="rounded-md border border-gray-300 px-7 py-3.5 text-lg font-semibold text-gray-900 transition hover:bg-gray-100 dark:border-gray-700 dark:text-gray-100 dark:hover:bg-gray-800"
             >
               Entrar
             </Link>
@@ -41,8 +48,6 @@ export default async function HomePage() {
         </section>
 
         <HowItWorks />
-        <Faq />
-        <Support />
       </main>
     </>
   );
