@@ -14,12 +14,12 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-gray-200 dark:border-emerald-900/60">
       <div className="mx-auto max-w-6xl px-6 py-10">
-        <nav className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium text-gray-600 dark:text-gray-400">
+        <nav className="flex flex-wrap justify-center gap-x-2 gap-y-2 text-sm font-medium text-gray-600 dark:text-gray-400">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-gray-900 dark:hover:text-white"
+              className="rounded-md border border-transparent px-2.5 py-1 transition-all duration-200 hover:scale-110 hover:border-green-500 hover:text-green-600 dark:hover:border-green-400 dark:hover:text-green-400"
             >
               {link.label}
             </Link>

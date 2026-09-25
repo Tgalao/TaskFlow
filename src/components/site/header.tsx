@@ -3,6 +3,9 @@ import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Logo } from "@/components/site/logo";
 import { MobileMenu } from "@/components/site/mobile-menu";
 
+const navLinkClass =
+  "rounded-md border border-transparent px-3 py-1.5 transition-all duration-200 hover:scale-110 hover:border-green-500 hover:text-green-600 hover:shadow-sm dark:hover:border-green-400 dark:hover:text-green-400";
+
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b border-gray-200 bg-white/80 backdrop-blur dark:border-gray-900 dark:bg-black">
@@ -15,14 +18,14 @@ export function SiteHeader() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 text-base font-medium text-gray-600 dark:text-gray-300 md:flex">
-          <Link href="/how-it-works" className="hover:text-gray-900 dark:hover:text-white">
+        <nav className="hidden items-center gap-2 text-base font-medium text-gray-600 dark:text-gray-300 md:flex">
+          <Link href="/how-it-works" className={navLinkClass}>
             How it works
           </Link>
-          <Link href="/faq" className="hover:text-gray-900 dark:hover:text-white">
+          <Link href="/faq" className={navLinkClass}>
             FAQ
           </Link>
-          <Link href="/support" className="hover:text-gray-900 dark:hover:text-white">
+          <Link href="/support" className={navLinkClass}>
             Support
           </Link>
         </nav>
@@ -31,13 +34,13 @@ export function SiteHeader() {
           <ThemeToggle />
           <Link
             href="/login"
-            className="hidden text-base font-semibold text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white sm:block"
+            className={`hidden text-base font-semibold text-gray-700 dark:text-gray-300 sm:block ${navLinkClass}`}
           >
             Sign in
           </Link>
           <Link
             href="/register"
-            className="rounded-md bg-gray-900 px-3 py-2 text-sm font-semibold text-white transition hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200 sm:px-5 sm:py-2.5 sm:text-base"
+            className="rounded-md border border-transparent bg-gray-900 px-3 py-2 text-sm font-semibold text-white transition-all duration-200 hover:scale-110 hover:border-green-400 hover:shadow-sm dark:bg-white dark:text-gray-900 sm:px-5 sm:py-2.5 sm:text-base"
           >
             Sign up
           </Link>
