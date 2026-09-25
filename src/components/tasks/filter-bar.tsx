@@ -31,13 +31,13 @@ export function FilterBar() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Pesquisar tarefas..."
-          className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-gray-900 focus:outline-none"
+          className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-gray-900 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:border-white"
         />
       </form>
       <select
         value={searchParams.get("status") ?? ""}
         onChange={(e) => setParam("status", e.target.value)}
-        className="rounded-md border border-gray-300 px-2 py-2 text-sm"
+        className="rounded-md border border-gray-300 px-2 py-2 text-sm dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
       >
         <option value="">Todos os estados</option>
         <option value="TODO">To Do</option>
@@ -47,7 +47,7 @@ export function FilterBar() {
       <select
         value={searchParams.get("priority") ?? ""}
         onChange={(e) => setParam("priority", e.target.value)}
-        className="rounded-md border border-gray-300 px-2 py-2 text-sm"
+        className="rounded-md border border-gray-300 px-2 py-2 text-sm dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
       >
         <option value="">Todas as prioridades</option>
         <option value="LOW">Low</option>

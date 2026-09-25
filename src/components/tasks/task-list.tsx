@@ -40,14 +40,14 @@ export function TaskList({ initialTasks }: { initialTasks: Task[] }) {
 
   if (tasks.length === 0) {
     return (
-      <p className="rounded-lg border border-dashed border-gray-300 p-8 text-center text-sm text-gray-500">
+      <p className="rounded-lg border border-dashed border-gray-300 p-8 text-center text-sm text-gray-500 dark:border-gray-700 dark:text-gray-400">
         Nenhuma tarefa encontrada.
       </p>
     );
   }
 
   return (
-    <ul className="divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white">
+    <ul className="divide-y divide-gray-200 rounded-lg border border-gray-200 bg-white dark:divide-gray-800 dark:border-gray-800 dark:bg-gray-900">
       {tasks.map((task) => (
         <li
           key={task.id}
@@ -56,7 +56,7 @@ export function TaskList({ initialTasks }: { initialTasks: Task[] }) {
           <div className="min-w-0 flex-1">
             <Link
               href={`/tasks/${task.id}`}
-              className="font-medium text-gray-900 hover:underline"
+              className="font-medium text-gray-900 hover:underline dark:text-gray-100"
             >
               {task.title}
             </Link>
@@ -64,7 +64,7 @@ export function TaskList({ initialTasks }: { initialTasks: Task[] }) {
               <StatusBadge status={task.status} />
               <PriorityBadge priority={task.priority} />
               {task.dueDate && (
-                <span className="text-xs text-gray-500">
+                <span className="text-xs text-gray-500 dark:text-gray-400">
                   Prazo: {new Date(task.dueDate).toLocaleDateString("pt-PT")}
                 </span>
               )}
@@ -75,7 +75,7 @@ export function TaskList({ initialTasks }: { initialTasks: Task[] }) {
               value={task.status}
               disabled={pendingId === task.id}
               onChange={(e) => updateStatus(task.id, e.target.value as TaskStatus)}
-              className="rounded-md border border-gray-300 px-2 py-1 text-xs"
+              className="rounded-md border border-gray-300 px-2 py-1 text-xs dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
             >
               <option value="TODO">To Do</option>
               <option value="IN_PROGRESS">In Progress</option>
@@ -84,7 +84,7 @@ export function TaskList({ initialTasks }: { initialTasks: Task[] }) {
             <button
               onClick={() => deleteTask(task.id)}
               disabled={pendingId === task.id}
-              className="rounded-md border border-red-200 px-2 py-1 text-xs font-medium text-red-600 hover:bg-red-50"
+              className="rounded-md border border-red-200 px-2 py-1 text-xs font-medium text-red-600 hover:bg-red-50 dark:border-red-900 dark:hover:bg-red-950/50"
             >
               Apagar
             </button>

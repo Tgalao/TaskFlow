@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 const links = [
   { href: "/dashboard", label: "Dashboard" },
   { href: "/tasks", label: "Tarefas" },
+  { href: "/settings", label: "Definicoes" },
 ];
 
 export function DashboardNav() {
@@ -22,8 +23,8 @@ export function DashboardNav() {
             href={link.href}
             className={`rounded-md px-3 py-1.5 text-sm font-medium ${
               active
-                ? "bg-gray-900 text-white"
-                : "text-gray-700 hover:bg-gray-100"
+                ? "bg-gray-900 text-white dark:bg-white dark:text-gray-900"
+                : "text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
             }`}
           >
             {link.label}

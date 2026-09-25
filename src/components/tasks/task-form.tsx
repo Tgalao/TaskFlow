@@ -24,6 +24,10 @@ function toFormValues(task?: Task): TaskFormValues {
   };
 }
 
+const inputClass =
+  "mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-gray-900 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:border-white";
+const labelClass = "block text-sm font-medium text-gray-700 dark:text-gray-300";
+
 export function TaskForm({
   task,
   onDone,
@@ -78,28 +82,28 @@ export function TaskForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="block text-sm font-medium text-gray-700">Titulo</label>
+        <label className={labelClass}>Titulo</label>
         <input
           required
           value={values.title}
           onChange={(e) => setValues((v) => ({ ...v, title: e.target.value }))}
-          className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-gray-900 focus:outline-none"
+          className={inputClass}
         />
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700">Descricao</label>
+        <label className={labelClass}>Descricao</label>
         <textarea
           rows={3}
           value={values.description}
           onChange={(e) =>
             setValues((v) => ({ ...v, description: e.target.value }))
           }
-          className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-gray-900 focus:outline-none"
+          className={inputClass}
         />
       </div>
       <div className="grid grid-cols-3 gap-3">
         <div>
-          <label className="block text-sm font-medium text-gray-700">Estado</label>
+          <label className={labelClass}>Estado</label>
           <select
             value={values.status}
             onChange={(e) =>
@@ -108,7 +112,7 @@ export function TaskForm({
                 status: e.target.value as TaskFormValues["status"],
               }))
             }
-            className="mt-1 w-full rounded-md border border-gray-300 px-2 py-2 text-sm"
+            className={inputClass}
           >
             <option value="TODO">To Do</option>
             <option value="IN_PROGRESS">In Progress</option>
@@ -116,9 +120,7 @@ export function TaskForm({
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Prioridade
-          </label>
+          <label className={labelClass}>Prioridade</label>
           <select
             value={values.priority}
             onChange={(e) =>
@@ -127,7 +129,7 @@ export function TaskForm({
                 priority: e.target.value as TaskFormValues["priority"],
               }))
             }
-            className="mt-1 w-full rounded-md border border-gray-300 px-2 py-2 text-sm"
+            className={inputClass}
           >
             <option value="LOW">Low</option>
             <option value="MEDIUM">Medium</option>
@@ -135,22 +137,26 @@ export function TaskForm({
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">Prazo</label>
+          <label className={labelClass}>Prazo</label>
           <input
             type="date"
             value={values.dueDate}
             onChange={(e) =>
               setValues((v) => ({ ...v, dueDate: e.target.value }))
             }
-            className="mt-1 w-full rounded-md border border-gray-300 px-2 py-2 text-sm"
+            className={inputClass}
           />
         </div>
       </div>
-      {error && <p className="text-sm text-red-600">{error}</p>}
+      {error && (
+        <p className="animate-shake text-sm text-red-600 dark:text-red-400">
+          {error}
+        </p>
+      )}
       <button
         type="submit"
         disabled={loading}
-        className="rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-700 disabled:opacity-50"
+        className="rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-700 disabled:opacity-50 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
       >
         {loading ? "A guardar..." : isEdit ? "Guardar alteracoes" : "Criar tarefa"}
       </button>
