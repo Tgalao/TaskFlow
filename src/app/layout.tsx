@@ -29,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <ThemeScript />
       </head>
-      <body className="flex min-h-full flex-col bg-gray-50 text-gray-900 transition-colors dark:bg-gray-950 dark:text-gray-100">
+      <body className="flex min-h-full flex-col bg-gray-50 text-gray-900 transition-colors dark:bg-black dark:text-gray-100">
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

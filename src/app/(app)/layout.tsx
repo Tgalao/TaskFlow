@@ -18,7 +18,7 @@ export default async function AppLayout({
 
   return (
     <div className="flex min-h-screen flex-1 flex-col">
-      <header className="border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950">
+      <header className="border-b border-gray-200 bg-white dark:border-gray-900 dark:bg-black">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-8">
             <Link

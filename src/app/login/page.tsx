@@ -12,7 +12,7 @@ export default function LoginPage() {
   );
 
   return (
-    <main className="flex flex-1 flex-col items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 px-6 py-12 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
+    <main className="flex flex-1 flex-col items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 px-6 py-12 dark:from-black dark:via-black dark:to-black">
       <Link
         href="/"
         className="animate-fade-in-up mb-8 flex items-center gap-3 text-3xl font-bold text-gray-900 dark:text-gray-100"

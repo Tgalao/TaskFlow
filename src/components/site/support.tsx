@@ -4,7 +4,7 @@ const SUPPORT_EMAIL = "tseabra@outlook.pt";
 
 export function Support() {
   return (
-    <section className="flex-1 bg-gray-100 dark:bg-gray-900/40">
+    <section className="flex-1 bg-gray-100 dark:bg-black">
       <div className="mx-auto max-w-6xl px-6 py-20">
         <h1 className="text-center text-4xl font-bold text-gray-900 dark:text-gray-100">
           Suporte

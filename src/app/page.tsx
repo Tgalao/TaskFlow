@@ -1,9 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { SiteHeader } from "@/components/site/header";
-import { HowItWorks } from "@/components/site/how-it-works";
 
 export default async function HomePage() {
   const session = await auth();
@@ -15,16 +13,8 @@ export default async function HomePage() {
     <>
       <SiteHeader />
       <main className="flex-1">
-        <section className="flex flex-col items-center px-6 py-28 text-center">
-          <Image
-            src="/logo.png"
-            alt="TaskFlow"
-            width={120}
-            height={120}
-            className="animate-fade-in-up rounded-2xl"
-            priority
-          />
-          <h1 className="animate-fade-in-up mt-6 text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-7xl">
+        <section className="flex flex-col items-center px-6 py-32 text-center">
+          <h1 className="animate-fade-in-up text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-7xl">
             TaskFlow
           </h1>
           <p className="animate-fade-in-up mt-6 max-w-2xl text-xl text-gray-600 dark:text-gray-400">
@@ -46,8 +36,6 @@ export default async function HomePage() {
             </Link>
           </div>
         </section>
-
-        <HowItWorks />
       </main>
     </>
   );
