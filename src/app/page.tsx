@@ -3,6 +3,7 @@ import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { SiteHeader } from "@/components/site/header";
 import { SiteFooter } from "@/components/site/footer";
+import { HeroMockup } from "@/components/site/hero-mockup";
 
 export default async function HomePage() {
   const session = await auth();
@@ -14,7 +15,8 @@ export default async function HomePage() {
     <>
       <SiteHeader />
       <main className="flex-1">
-        <section className="flex min-h-[80vh] flex-col items-center justify-center px-4 text-center sm:px-6">
+        <section className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden px-4 text-center sm:px-6">
+          <HeroMockup />
           <h1 className="animate-fade-in-up lowercase text-5xl font-bold tracking-tight sm:text-7xl md:text-8xl">
             <span className="bg-gradient-to-r from-teal-800 to-gray-950 bg-clip-text text-transparent dark:from-teal-400 dark:to-teal-700">
               task
